@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather & Cat Facts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Weather &amp; Cat Facts App</h1>
+        <p>Enter a city below to see the current weather and a fun cat fact!</p>
+        <form action="{{ url_for('result') }}" method="post" class="search-form">
+            <input type="text" name="city" placeholder="Enter city" required />
+            <button type="submit">Get Weather &amp; Cat Fact</button>
+        </form>
+    </div>
+</body>
+</html>

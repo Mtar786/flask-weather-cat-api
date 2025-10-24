@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results - Weather & Cat Facts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% else %}
+            <h2>Weather for {{ city }}</h2>
+            {% if weather %}
+            <ul class="weather">
+                <li><strong>Temperature:</strong> {{ weather.temperature_C }}°C / {{ weather.temperature_F }}°F</li>
+                <li><strong>Description:</strong> {{ weather.description }}</li>
+                <li><strong>Humidity:</strong> {{ weather.humidity }}%</li>
+                <li><strong>Wind Speed:</strong> {{ weather.wind_kmph }} km/h</li>
+            </ul>
+            {% else %}
+            <p>Weather information could not be retrieved.</p>
+            {% endif %}
+            <h2>Cat Fact</h2>
+            {% if cat_fact %}
+            <p class="cat-fact">{{ cat_fact }}</p>
+            {% else %}
+            <p>Could not fetch a cat fact at this time.</p>
+            {% endif %}
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="back-link">&#8592; Back to home</a>
+    </div>
+</body>
+</html>
