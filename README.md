@@ -2,6 +2,7 @@
 
 This project is a fun and simple Flask web application that combines two popular APIs to deliver something a little different: when you enter the name of a city, the app shows you the current weather along with a random cat fact. The application fetches live weather data from [wttr.in](https://wttr.in) and random cat trivia from [Catfact.ninja](https://catfact.ninja).
 
+
 ## Features
 
 - **Current weather:** Users can enter any city name to see the current temperature, weather description, humidity and wind speed.
